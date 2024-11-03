@@ -1,0 +1,75 @@
+#game-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #333;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    margin: 20px auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+}
+
+.cell:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.cell:nth-child(even) {
+    background-color: #e3e3e3;
+}
+
+.ladder-start {
+    background: linear-gradient(to top, #b8e994, #38ada9); /* Green gradient */
+    color: #333;
+    font-weight: bold;
+}
+.ladder-end {
+    background: linear-gradient(to top, #78e08f, #0a3d62); /* Different shade for ladder end */
+}
+
+/* Styles for snakes */
+.snake-start {
+    background: linear-gradient(to bottom, #ff6b6b, #c44569); /* Red gradient */
+    color: #fff;
+    font-weight: bold;
+}
+.snake-end {
+    background: linear-gradient(to bottom, #ee5253, #b33939); /* Different shade for snake end */
+}
+
+
+.player {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+#player1 {
+    background-color: red;
+}
+
+#player2 {
+    background-color: blue;
+}
