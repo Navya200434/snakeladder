@@ -116,7 +116,7 @@
     for (const start in ladder) {
         const end = ladder[start];
         const row = document.createElement("tr");
-        row.innerHTML = <td>Ladder</td><td>${start}</td><td>${end}</td>;
+        row.innerHTML = `<td>Ladder</td><td>${start}</td><td>${end}</td>`;
         identificationBody.appendChild(row);
     }
 
@@ -124,23 +124,23 @@
     for (const start in snake) {
         const end = snake[start];
         const row = document.createElement("tr");
-        row.innerHTML = <td>Snake</td><td>${start}</td><td>${end}</td>;
+        row.innerHTML = `<td>Snake</td><td>${start}</td><td>${end}</td>`;
         identificationBody.appendChild(row);
     }
 }
     function rollDice() {
         let currentPlayer = turn % 2 === 0 ? p1_name : p2_name;
         let dice = Math.floor(Math.random() * 6) + 1;
-        document.getElementById("dice-result").innerText = ${currentPlayer} rolled a ${dice};
+        document.getElementById("dice-result").innerText = `${currentPlayer} rolled a ${dice}`;
 
         if (turn % 2 === 0) {
             pp1 += dice;
             pp1 = checkLadder(pp1);
             pp1 = checkSnake(pp1);
             if (pp1 > end) pp1 = end;
-            document.getElementById("player1-score").innerText = ${p1_name} Score: ${pp1};
+            document.getElementById("player1-score").innerText = `${p1_name} Score: ${pp1}`;
             if (pp1 >= end) {
-                alert(${p1_name} won!);
+                alert(`${p1_name} won!`);
                 resetGame();
                 return;
             }
@@ -149,9 +149,9 @@
             pp2 = checkLadder(pp2);
             pp2 = checkSnake(pp2);
             if (pp2 > end) pp2 = end;
-            document.getElementById("player2-score").innerText = ${p2_name} Score: ${pp2};
+            document.getElementById("player2-score").innerText = `${p2_name} Score: ${pp2}`;
             if (pp2 >= end) {
-                alert(${p2_name} won!);
+                alert(`${p2_name} won!`);
                 resetGame();
                 return;
             }
@@ -179,7 +179,7 @@
     }
 
     function updateTurnInfo() {
-        document.getElementById("turn-info").innerText = ${turn % 2 === 0 ? p1_name : p2_name}'s turn;
+        document.getElementById("turn-info").innerText = `${turn % 2 === 0 ? p1_name : p2_name}'s turn`;
     }
 
     function updatePlayerPosition() {
